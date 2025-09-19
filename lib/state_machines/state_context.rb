@@ -127,7 +127,7 @@ module StateMachines
       
       # Evaluate the method on the owner class with the condition proxied
       # through
-      machine.owner_class.send(*args, &block)
+      machine.owner_class.send(*args[0...-1], **args[-1], &block)
     end
   end
 end
